@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Карточки для соцсетей — Лилия</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Manrope', sans-serif;
+    background: #2A3947;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+}
+
+:root {
+    --accent: #E8D5A8;
+    --ink: #F4F1EA;
+    --ink-soft: rgba(244,241,234,0.78);
+    --ink-mute: rgba(244,241,234,0.50);
+    --glass: rgba(255,255,255,0.10);
+    --glass-strong: rgba(255,255,255,0.18);
+    --glass-border: rgba(255,255,255,0.20);
+}
+
+.label {
+    color: #888;
+    font-size: 13px;
+    font-family: 'Manrope', sans-serif;
+    text-align: center;
+    margin-bottom: 8px;
+    letter-spacing: .1em;
+}
+
+/* ===== CARD BASE ===== */
+.card {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(900px 600px at 85% 0%, rgba(232,213,168,0.15), transparent 55%),
+        radial-gradient(700px 500px at 0% 100%, rgba(165,188,201,0.35), transparent 60%),
+        linear-gradient(165deg, #5C7587 0%, #7B96A8 45%, #6B8597 100%);
+    color: var(--ink);
+}
+
+/* noise texture overlay */
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 10;
+}
+
+.inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    padding: 72px;
+}
+
+/* ===== BADGE ===== */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    border-radius: 999px;
+    padding: 10px 22px;
+    font-size: 12px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+}
+.badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px rgba(232,213,168,.8);
+}
+
+/* ===== GLASS PANEL ===== */
+.glass-panel {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(24px);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(20,35,50,.25), inset 0 1px 0 rgba(255,255,255,.15);
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+    width: 48px; height: 1px;
+    background: var(--accent);
+    opacity: .6;
+    margin: 24px 0;
+}
+
+/* ===== LOGO ===== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.logo-mark {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--glass-strong);
+    border: 1px solid var(--glass-border);
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+}
+.logo-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.1;
+}
+.logo-sub {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    color: var(--ink-mute);
+    font-weight: 400;
+    margin-top: 3px;
+}
+
+/* ============================================================
+   CARD 1 — ГЛАВНЫЙ ОФФЕР
+   ============================================================ */
+.card-1 .inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.card-1 .photo-wrap {
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 30px 80px rgba(20,35,50,.4), inset 0 1px 0 rgba(255,255,255,.2);
+    transform: rotate(1.5deg);
+}
+.card-1 .photo-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-1 .text-side {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.card-1 h1 {
+    font-weight: 200;
+    font-size: 96px;
+    line-height: .9;
+    letter-spacing: -.05em;
+    color: var(--ink);
+    margin: 20px 0 24px;
+}
+.card-1 p {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 36px;
+}
+.card-1 .cta-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--ink);
+    color: #2A3947;
+    border-radius: 999px;
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    width: fit-content;
+    box-shadow: 0 8px 30px rgba(244,241,234,.25);
+}
+.card-1 .footer-row {
+    position: absolute;
+    bottom: 60px;
+    left: 72px;
+    right: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-1 .location {
+    font-size: 12px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+}
+
+/* ============================================================
+   CARD 2 — УСЛУГИ И ЦЕНЫ
+   ============================================================ */
+.card-2 .inner {
+    display: flex;
+    flex-direction: column;
+}
+.card-2 .header-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 44px;
+}
+.card-2 h2 {
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1;
+    letter-spacing: -.03em;
+    color: var(--ink);
+    margin-top: 16px;
+}
+.card-2 .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    flex: 1;
+}
+.service-item {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 26px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    backdrop-filter: blur(20px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+}
+.service-item .num {
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: .1em;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.service-item .name {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.2;
+    letter-spacing: -.01em;
+}
+.service-item .meta {
+    font-size: 11px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    margin-top: 6px;
+}
+.service-item .price-col {
+    text-align: right;
+    flex-shrink: 0;
+}
+.service-item .price {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--accent);
+    white-space: nowrap;
+}
+.service-item .price-first {
+    font-size: 11px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-top: 4px;
+}
+.card-2 .footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 28px;
+}
+
+/* ============================================================
+   CARD 3 — ПОДХОД / ПРЕИМУЩЕСТВА
+   ============================================================ */
+.card-3 .inner {
+    display: flex;
+    flex-direction: column;
+}
+.card-3 h2 {
+    font-weight: 300;
+    font-size: 60px;
+    line-height: .95;
+    letter-spacing: -.03em;
+    color: var(--ink);
+    margin: 18px 0 12px;
+    max-width: 640px;
+}
+.card-3 .sub {
+    font-size: 17px;
+    color: var(--ink-soft);
+    font-weight: 300;
+    margin-bottom: 44px;
+    max-width: 640px;
+    line-height: 1.5;
+}
+.card-3 .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    flex: 1;
+}
+.benefit-item {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px 30px;
+    backdrop-filter: blur(20px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+}
+.benefit-item .b-num {
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: .15em;
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+.benefit-item h3 {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -.015em;
+    margin-bottom: 10px;
+    line-height: 1.15;
+}
+.benefit-item p {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--ink-soft);
+    line-height: 1.5;
+}
+.card-3 .footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 28px;
+}
+
+/* ============================================================
+   CARD 4 — ОТДЕЛЬНАЯ УСЛУГА (Остеоэстетика)
+   ============================================================ */
+.card-4 .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-4 .top { display: flex; flex-direction: column; }
+.card-4 h2 {
+    font-weight: 300;
+    font-size: 68px;
+    line-height: .95;
+    letter-spacing: -.04em;
+    color: var(--ink);
+    margin: 18px 0 24px;
+    max-width: 680px;
+}
+.card-4 .desc {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    max-width: 640px;
+    margin-bottom: 40px;
+}
+.card-4 .results-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+.card-4 .results-list li {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 16px 20px;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--ink-soft);
+    backdrop-filter: blur(20px);
+    position: relative;
+    padding-left: 36px;
+}
+.card-4 .results-list li::before {
+    content: '';
+    position: absolute;
+    left: 16px; top: 22px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px rgba(232,213,168,.6);
+}
+.card-4 .price-row {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+.card-4 .price-big {
+    font-size: 52px;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: -.03em;
+}
+.card-4 .price-note {
+    font-size: 13px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    line-height: 1.6;
+}
+.card-4 .price-note s { display: block; font-size: 18px; color: var(--ink-mute); }
+.card-4 .footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ============================================================
+   CARD 5 — ЗАПИСЬ / CTA
+   ============================================================ */
+.card-5 .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+}
+.card-5 .big-l {
+    font-size: 360px;
+    font-weight: 200;
+    line-height: .8;
+    letter-spacing: -.08em;
+    color: rgba(244,241,234,0.06);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    pointer-events: none;
+    z-index: 1;
+    font-family: 'Manrope', sans-serif;
+}
+.card-5 .content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+.card-5 h2 {
+    font-weight: 200;
+    font-size: 84px;
+    line-height: .9;
+    letter-spacing: -.05em;
+    color: var(--ink);
+    margin: 24px 0 20px;
+}
+.card-5 .tagline {
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--ink-soft);
+    max-width: 560px;
+    line-height: 1.5;
+    margin-bottom: 44px;
+}
+.card-5 .cta-buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 60px;
+}
+.btn-primary {
+    background: var(--ink);
+    color: #2A3947;
+    border-radius: 999px;
+    padding: 18px 40px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    box-shadow: 0 8px 30px rgba(244,241,234,.25);
+    border: none;
+}
+.btn-ghost {
+    background: var(--glass);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 18px 40px;
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+}
+.card-5 .contact-pills {
+    display: flex;
+    gap: 14px;
+}
+.contact-pill {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    padding: 12px 24px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    backdrop-filter: blur(16px);
+}
+.card-5 .footer-row {
+    position: absolute;
+    bottom: 60px;
+    left: 72px; right: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+</style>
+</head>
+<body>
+
+<!-- ==========================================
+     CARD 1 — ГЛАВНЫЙ ОФФЕР
+     ========================================== -->
+<div class="label">КАРТОЧКА 1 — Главный оффер</div>
+<div class="card card-1">
+    <div class="inner">
+        <div class="photo-wrap">
+            <img src="images/Gemini_Generated_Image_gejf30gejf30gejf.png" alt="Лилия">
+        </div>
+        <div class="text-side">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Эстетист · Тольятти
+            </div>
+            <h1>Лилия</h1>
+            <p>Глубокий уход за лицом и телом — забота, которая заметна.<br>Подбираю ритуал именно под вашу кожу.</p>
+            <div class="cta-tag">Записаться →</div>
+        </div>
+    </div>
+    <div class="card-1 footer-row" style="position:absolute;bottom:56px;left:72px;right:72px;display:flex;align-items:center;justify-content:space-between;z-index:3;">
+        <div class="logo">
+            <div class="logo-mark">Л</div>
+            <div>
+                <div class="logo-text">Лилия</div>
+                <div class="logo-sub">Эстетист · Косметолог</div>
+            </div>
+        </div>
+        <div style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute)">Тольятти · по записи</div>
+    </div>
+</div>
+
+<!-- ==========================================
+     CARD 2 — УСЛУГИ И ЦЕНЫ
+     ========================================== -->
+<div class="label">КАРТОЧКА 2 — Услуги и цены</div>
+<div class="card card-2">
+    <div class="inner">
+        <div class="header-row">
+            <div>
+                <div class="badge"><span class="badge-dot"></span>Услуги</div>
+                <h2>Что можно<br>у меня сделать</h2>
+            </div>
+            <div class="logo">
+                <div class="logo-mark">Л</div>
+                <div>
+                    <div class="logo-text">Лилия</div>
+                    <div class="logo-sub">Эстетист · Косметолог</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-item">
+                <div>
+                    <div class="num">01</div>
+                    <div class="name">Подбор домашнего<br>ухода</div>
+                    <div class="meta">Офлайн · 1 час</div>
+                </div>
+                <div class="price-col">
+                    <div class="price">2 500 ₽</div>
+                </div>
+            </div>
+            <div class="service-item">
+                <div>
+                    <div class="num">02</div>
+                    <div class="name">Лимфодренаж<br>всего тела</div>
+                    <div class="meta">Офлайн · 1,5 часа</div>
+                </div>
+                <div class="price-col">
+                    <div class="price">2 000 ₽</div>
+                    <div class="price-first">первый сеанс</div>
+                </div>
+            </div>
+            <div class="service-item">
+                <div>
+                    <div class="num">03</div>
+                    <div class="name">Уходовая процедура<br>за лицом</div>
+                    <div class="meta">Офлайн · 1–1,5 часа</div>
+                </div>
+                <div class="price-col">
+                    <div class="price">2 500 ₽</div>
+                </div>
+            </div>
+            <div class="service-item">
+                <div>
+                    <div class="num">04</div>
+                    <div class="name">Осмотическая<br>чистка лица</div>
+                    <div class="meta">Офлайн · 1 час</div>
+                </div>
+                <div class="price-col">
+                    <div class="price">3 000 ₽</div>
+                </div>
+            </div>
+            <div class="service-item">
+                <div>
+                    <div class="num">05</div>
+                    <div class="name">Пилинги</div>
+                    <div class="meta">Офлайн · 1 час</div>
+                </div>
+                <div class="price-col">
+                    <div class="price">2 500–<br>3 500 ₽</div>
+                </div>
+            </div>
+            <div class="service-item">
+                <div>
+                    <div class="num">06</div>
+                    <div class="name">Карбокситерапия</div>
+                    <div class="meta">Офлайн · 1 час</div>
+                </div>
+                <div class="price-col">
+                    <div class="price">2 500 ₽</div>
+                    <div class="price-first">первый сеанс</div>
+                </div>
+            </div>
+            <div class="service-item" style="grid-column: 1 / -1;">
+                <div>
+                    <div class="num">07</div>
+                    <div class="name">Сеанс остеоэстетики — работа с лицом через кости, мышцы и фасции</div>
+                    <div class="meta">Офлайн · 1,5 часа</div>
+                </div>
+                <div class="price-col">
+                    <div class="price">2 000 ₽</div>
+                    <div class="price-first">первый сеанс</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-row">
+            <div style="font-size:13px;color:var(--ink-mute);">Тольятти · по записи</div>
+            <div style="font-size:13px;color:var(--accent);letter-spacing:.05em;">@lilia_kashirskaya →</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==========================================
+     CARD 3 — ПОДХОД / ПРЕИМУЩЕСТВА
+     ========================================== -->
+<div class="label">КАРТОЧКА 3 — Подход и преимущества</div>
+<div class="card card-3">
+    <div class="inner">
+        <div class="badge"><span class="badge-dot"></span>Подход</div>
+        <h2>Что вас<br>ждёт у меня</h2>
+        <p class="sub">Не косметология «на конвейере». Соединяю профессиональный уход, остеопатические техники и заботу — результат виден и на коже, и в самочувствии.</p>
+
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="b-num">01</div>
+                <h3>Индивидуально<br>под вас</h3>
+                <p>Сначала разбираем запрос, тип кожи, образ жизни. Потом подбираю протокол — не наоборот.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="b-num">02</div>
+                <h3>Работа с<br>первопричиной</h3>
+                <p>Учитываю анатомию: мышцы, фасции, лимфу. Результат держится дольше обычного массажа.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="b-num">03</div>
+                <h3>Без боли и<br>реабилитации</h3>
+                <p>Мягкие техники, малоинвазивные составы — быстрый возврат к обычной жизни.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="b-num">04</div>
+                <h3>Время<br>на себя</h3>
+                <p>На сеансе вы расслабляетесь и восстанавливаетесь — многие чувствуют себя как после СПА.</p>
+            </div>
+        </div>
+
+        <div class="footer-row">
+            <div class="logo">
+                <div class="logo-mark">Л</div>
+                <div>
+                    <div class="logo-text">Лилия</div>
+                    <div class="logo-sub">Эстетист · Косметолог · Тольятти</div>
+                </div>
+            </div>
+            <div style="font-size:13px;color:var(--accent);letter-spacing:.05em;">Записаться →</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==========================================
+     CARD 4 — УСЛУГА: ОСТЕОЭСТЕТИКА
+     ========================================== -->
+<div class="label">КАРТОЧКА 4 — Услуга: Остеоэстетика</div>
+<div class="card card-4">
+    <div class="inner">
+        <div class="top">
+            <div class="badge"><span class="badge-dot"></span>Флагманская услуга</div>
+            <h2>Сеанс<br>остеоэстетики</h2>
+            <p class="desc">Работа с лицом через кости, мышцы и фасции. Лифтинг без инъекций — стойкий результат с накопительным эффектом.</p>
+
+            <ul class="results-list">
+                <li>Чёткий овал лица и лифтинг</li>
+                <li>Открытый взгляд, свежесть</li>
+                <li>Уменьшение морщин и отёков</li>
+                <li>Расслабление как после СПА</li>
+                <li>Без боли и реабилитации</li>
+                <li>Эффект держится дольше массажа</li>
+            </ul>
+        </div>
+
+        <div>
+            <div class="price-row">
+                <div class="price-big">2 000 ₽</div>
+                <div class="price-note">
+                    первый сеанс
+                    <s>обычно 2 500 ₽</s>
+                    курс 4 сеанса — 8 000 ₽
+                </div>
+            </div>
+            <div style="height:28px"></div>
+            <div class="footer-row">
+                <div class="logo">
+                    <div class="logo-mark">Л</div>
+                    <div>
+                        <div class="logo-text">Лилия</div>
+                        <div class="logo-sub">Эстетист · Тольятти</div>
+                    </div>
+                </div>
+                <div style="background:var(--ink);color:#2A3947;border-radius:999px;padding:14px 30px;font-size:14px;font-weight:600;">Записаться →</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==========================================
+     CARD 5 — CTA / ЗАПИСЬ
+     ========================================== -->
+<div class="label">КАРТОЧКА 5 — Запись / CTA</div>
+<div class="card card-5">
+    <div class="big-l">Л</div>
+    <div class="inner">
+        <div class="content">
+            <div class="badge"><span class="badge-dot"></span>Тольятти · По записи</div>
+            <h2>Записаться<br>к Лилии</h2>
+            <p class="tagline">Принимаю в кабинете в Тольятти. Будни после 16:00 и выходные. Напишите — отвечу и подберём удобное время.</p>
+            <div class="cta-buttons">
+                <div class="btn-primary">@lilia_kashirskaya →</div>
+            </div>
+            <div class="contact-pills">
+                <div class="contact-pill">Эстетист</div>
+                <div class="contact-pill">Косметолог</div>
+                <div class="contact-pill">Провизор</div>
+            </div>
+        </div>
+    </div>
+    <div class="card-5 footer-row" style="position:absolute;bottom:56px;left:72px;right:72px;display:flex;align-items:center;justify-content:space-between;z-index:3;">
+        <div class="logo">
+            <div class="logo-mark">Л</div>
+            <div>
+                <div class="logo-text">Лилия</div>
+                <div class="logo-sub">Эстетист · Косметолог</div>
+            </div>
+        </div>
+        <div style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute)">Тольятти</div>
+    </div>
+</div>
+
+</body>
+</html>

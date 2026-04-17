@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лилия — эстетист-косметолог | Тольятти</title>
+    <meta name="description" content="Лилия — эстетист, провизор. Подбор домашнего ухода, лимфодренаж, пилинги, чистка лица, карбокситерапия, остеоэстетика. Тольятти.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header" id="header">
+    <div class="container header__inner">
+        <a href="#top" class="logo">
+            <span class="logo__mark">Л</span>
+            <span class="logo__text">Лилия<small>эстетист · косметолог</small></span>
+        </a>
+
+        <nav class="nav" id="nav">
+            <a href="#about" class="nav__link">Обо мне</a>
+            <a href="#offer" class="nav__link">Подход</a>
+            <a href="#services" class="nav__link">Услуги</a>
+            <a href="#contacts" class="nav__link">Контакты</a>
+        </nav>
+
+        <a href="#contacts" class="btn btn--primary header__cta">Записаться</a>
+
+        <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <p class="hero__eyebrow">Эстетист · Тольятти</p>
+                <h1 class="hero__title">Лилия</h1>
+                <p class="hero__sub">Глубокий уход за лицом и телом — забота, которая заметна.<br>Подбираю ритуал именно под вашу кожу: расслабление, отдых и видимый результат за один сеанс.</p>
+                <div class="hero__actions">
+                    <a href="#services" class="btn btn--primary btn--lg">Выбрать услугу</a>
+                    <a href="#contacts" class="btn btn--ghost btn--lg">Записаться</a>
+                </div>
+            </div>
+            <div class="hero__media">
+                <img src="images/liliya_final.jpg" alt="Лилия — эстетист, косметолог" class="hero__photo" onerror="this.parentElement.classList.add('hero__media--placeholder'); this.style.display='none'">
+                <div class="hero__placeholder">
+                    <span>Фото<br>Лилии</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+        <div class="container container--narrow">
+            <p class="eyebrow">01 — Обо мне</p>
+            <h2 class="section__title">Образование и подход</h2>
+            <ul class="about__list">
+                <li>Эстетист — профильное образование</li>
+                <li>Провизор — фармацевтическое образование, разбираюсь в составах косметики</li>
+                <li>Полный курс специалиста по эстетическим уходам, пилингам и аппаратным методикам</li>
+                <li>Использую остеопатические техники в работе с лицом — учитываю анатомию мышц, фасций и крепления тканей</li>
+                <li>Принимаю женщин и мужчин в кабинете в Тольятти</li>
+            </ul>
+            <p class="about__lead">
+                Работаю мягкими, безболезненными техниками. На сеансе вы не просто получаете процедуру —
+                вы возвращаете себе время на отдых, чувствуете тело и кожу, выходите с ощущением, что о вас позаботились.
+            </p>
+        </div>
+    </section>
+
+    <!-- OFFER / USP -->
+    <section class="section section--alt" id="offer">
+        <div class="container">
+            <p class="eyebrow">02 — Подход</p>
+            <h2 class="section__title">Что вас ждёт у меня</h2>
+            <p class="section__lead">Не косметология «на конвейере» и не просто массаж. Я соединяю профессиональный уход, остеопатические техники и заботу — так, чтобы результат был и на коже, и в самочувствии.</p>
+
+            <div class="benefits">
+                <article class="benefit">
+                    <span class="benefit__num">01</span>
+                    <h3>Индивидуально под вас</h3>
+                    <p>Сначала разбираем запрос, тип кожи, образ жизни. Потом подбираю протокол и средства — не наоборот.</p>
+                </article>
+                <article class="benefit">
+                    <span class="benefit__num">02</span>
+                    <h3>Работа с первопричиной</h3>
+                    <p>Учитываю анатомию: мышцы, фасции, лимфу, крепления. Поэтому результат держится дольше, чем после обычного массажа.</p>
+                </article>
+                <article class="benefit">
+                    <span class="benefit__num">03</span>
+                    <h3>Без боли и реабилитации</h3>
+                    <p>Мягкие техники, малоинвазивные составы, быстрый возврат к обычной жизни — без выпадения из социальной активности.</p>
+                </article>
+                <article class="benefit">
+                    <span class="benefit__num">04</span>
+                    <h3>Время на себя</h3>
+                    <p>На сеансе клиенты восстанавливаются и расслабляются — многие говорят, что чувствуют себя как после хорошего СПА.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+        <div class="container">
+            <p class="eyebrow">03 — Услуги</p>
+            <h2 class="section__title">Что можно у меня сделать</h2>
+            <p class="section__lead">Семь направлений: от подбора домашнего ухода до глубокой работы с лицом методом остеоэстетики. Нажмите на услугу — раскроется подробное описание.</p>
+
+            <div class="services">
+
+                <!-- 1 -->
+                <details class="service">
+                    <summary class="service__summary">
+                        <span class="service__num">01</span>
+                        <span class="service__head">
+                            <span class="service__title">Подбор средств для домашнего ухода</span>
+                            <span class="service__meta">Офлайн · 1 час</span>
+                        </span>
+                        <span class="service__price">2 500 ₽<small>средства оплачиваются отдельно</small></span>
+                        <span class="service__chev" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="service__body">
+                        <div class="service__col">
+                            <h4>О процедуре</h4>
+                            <ul>
+                                <li>Индивидуальный подход и решение конкретных задач, которые волнуют вас</li>
+                                <li>Подбор средств по типу кожи, её состоянию и решаемым задачам</li>
+                                <li>Поддержание здоровья кожи: увлажнение, питание, обновление клеток</li>
+                                <li>Уход за отдельными зонами: область глаз, декольте, Т-зона</li>
+                                <li>Подбор ежедневного ухода для женщин и мужчин</li>
+                                <li>Регулярный ритуал заботы о себе — время, посвящённое себе</li>
+                            </ul>
+                        </div>
+                        <div class="service__col">
+                            <h4>Как проходит</h4>
+                            <ol>
+                                <li>Определяем запрос и решаемую задачу</li>
+                                <li>Анамнез: разбираем уже существующий уход</li>
+                                <li>Определяем тип и состояние кожи</li>
+                                <li>Оцениваем средства: что оставить, убрать, добавить</li>
+                                <li>Подбираем необходимые средства, обсуждаем особенности</li>
+                                <li>Протокол ухода — «тактильное знакомство» с продуктами</li>
+                                <li>Заказ и покупка выбранных средств</li>
+                            </ol>
+                        </div>
+                        <div class="service__col">
+                            <h4>Результат</h4>
+                            <ul>
+                                <li>Понимание особенностей своей кожи и её потребностей</li>
+                                <li>Уход с учётом сезонности и времени года</li>
+                                <li>Подбор для всего лица и отдельных зон (глаза, шея, декольте)</li>
+                                <li>Улучшение состояния кожи при регулярном уходе</li>
+                                <li>Готовый ритуал правильного и эффективного ухода дома</li>
+                            </ul>
+                        </div>
+                        <div class="service__cta">
+                            <a href="#contacts" class="btn btn--primary">Записаться на подбор</a>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 2 -->
+                <details class="service">
+                    <summary class="service__summary">
+                        <span class="service__num">02</span>
+                        <span class="service__head">
+                            <span class="service__title">Лимфодренаж всего тела</span>
+                            <span class="service__meta">Офлайн · 1,5 часа</span>
+                        </span>
+                        <span class="service__price">
+                            <span class="service__price-row"><s>2 500 ₽</s> <strong>2 000 ₽</strong> <small>первый сеанс</small></span>
+                            <span class="service__price-row">2 500 ₽ <small>повторный</small></span>
+                            <span class="service__price-row"><s>10 000 ₽</s> <strong>9 000 ₽</strong> <small>курс из 4</small></span>
+                        </span>
+                        <span class="service__chev" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="service__body">
+                        <div class="service__col">
+                            <h4>О процедуре</h4>
+                            <ul>
+                                <li>Улучшение детоксикации организма, выведение токсинов</li>
+                                <li>Особенно показано после отравления, болезни, приёма лекарств</li>
+                                <li>Уменьшение отёков и объёмов за счёт снятия застоя лимфы</li>
+                                <li>Улучшение микроциркуляции и качества кожи</li>
+                                <li>Подготовка к косметологическим и массажным сеансам — усиливает их эффект</li>
+                                <li>Медленные, плавные, безболезненные движения — успокоение и релаксация</li>
+                                <li>Особенно полезно при сидячей работе и малоподвижном образе жизни</li>
+                            </ul>
+                        </div>
+                        <div class="service__col">
+                            <h4>Как проходит</h4>
+                            <ol>
+                                <li>Работа со всеми диафрагмами тела</li>
+                                <li>Освобождение венозного угла (ключицы, шея)</li>
+                                <li>Освобождение тока лимфы в области головы и шеи</li>
+                                <li>Грудобрюшная диафрагма — снятие напряжения, включение в работу</li>
+                                <li>Формирование правильного паттерна дыхания</li>
+                                <li>Работа с брюшной стенкой, паховой областью, подколенным пространством</li>
+                                <li>Прокачка тока лимфы по всему телу</li>
+                            </ol>
+                        </div>
+                        <div class="service__col">
+                            <h4>Результат</h4>
+                            <ul>
+                                <li>Выведение токсинов, «очищение» организма</li>
+                                <li>Снятие ограничений по ходу тока лимфы</li>
+                                <li>Улучшение качества кожи, уменьшение отёчности тканей</li>
+                                <li>Расслабление тела и нервной системы</li>
+                                <li>Поддержка сердечно-сосудистой, иммунной, эндокринной систем</li>
+                            </ul>
+                        </div>
+                        <div class="service__cta">
+                            <a href="#contacts" class="btn btn--primary">Записаться на лимфодренаж</a>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 3 -->
+                <details class="service">
+                    <summary class="service__summary">
+                        <span class="service__num">03</span>
+                        <span class="service__head">
+                            <span class="service__title">Уходовая процедура за лицом</span>
+                            <span class="service__meta">Офлайн · 1–1,5 часа</span>
+                        </span>
+                        <span class="service__price">2 500 ₽</span>
+                        <span class="service__chev" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="service__body">
+                        <div class="service__col">
+                            <h4>О процедуре</h4>
+                            <ul>
+                                <li>Индивидуальный подход к решению эстетических задач</li>
+                                <li>Интенсивная проработка профессиональными средствами</li>
+                                <li>Подбор средств по типу и состоянию кожи</li>
+                                <li>Забота о себе и поддержание здоровья кожи</li>
+                                <li>Работа с учётом анатомии — нанесение по массажным линиям</li>
+                                <li>Для мужчин — деликатный уход за зоной бритья</li>
+                            </ul>
+                        </div>
+                        <div class="service__col">
+                            <h4>Как проходит</h4>
+                            <ol>
+                                <li>Определяем запрос, при необходимости корректируем акценты</li>
+                                <li>Определяем тип и состояние кожи</li>
+                                <li>Подбираем средства, обсуждаем протокол</li>
+                                <li>Демакияж и умывание</li>
+                                <li>Глубокое очищение</li>
+                                <li>Лимфодренаж: венозный угол, шея, голова</li>
+                                <li>Лёгкий массаж / пилинг / маска (по запросу)</li>
+                                <li>Тонизация и завершающий уход (сыворотка, крем)</li>
+                            </ol>
+                        </div>
+                        <div class="service__col">
+                            <h4>Результат</h4>
+                            <ul>
+                                <li>Сияние кожи и ухоженный вид</li>
+                                <li>Свежий, отдохнувший вид лица</li>
+                                <li>Увлажнение и питание кожи</li>
+                                <li>Обновление клеток и улучшение рельефа</li>
+                                <li>Приятные тактильные ощущения и релакс</li>
+                                <li>Время «на себя» с пользой и заботой о теле</li>
+                            </ul>
+                        </div>
+                        <div class="service__cta">
+                            <a href="#contacts" class="btn btn--primary">Записаться на уход</a>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 4 -->
+                <details class="service">
+                    <summary class="service__summary">
+                        <span class="service__num">04</span>
+                        <span class="service__head">
+                            <span class="service__title">Осмотическая чистка лица</span>
+                            <span class="service__meta">Офлайн · 1 час</span>
+                        </span>
+                        <span class="service__price">3 000 ₽</span>
+                        <span class="service__chev" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="service__body">
+                        <div class="service__col">
+                            <h4>О процедуре</h4>
+                            <ul>
+                                <li>Глубокое очищение — безболезненно и неинвазивно</li>
+                                <li>Улучшение микрорельефа кожи и обновление клеток</li>
+                                <li>Улучшение цвета лица, питания и трофики тканей</li>
+                                <li>Лучшее проникновение косметики в более глубокие слои</li>
+                                <li>Отдых и релакс во время процедуры</li>
+                                <li>Регулярная гигиена лица для женщин и мужчин</li>
+                            </ul>
+                        </div>
+                        <div class="service__col">
+                            <h4>Как проходит</h4>
+                            <ol>
+                                <li>Демакияж и умывание</li>
+                                <li>Первый этап очищения специальными средствами</li>
+                                <li>Второй этап — нанесение состава для глубокого очищения</li>
+                                <li>УЗ-чистка</li>
+                                <li>Смывание остатков средства, тонизация</li>
+                                <li>Маска</li>
+                                <li>Завершающий уход (сыворотка, крем)</li>
+                            </ol>
+                        </div>
+                        <div class="service__col">
+                            <h4>Результат</h4>
+                            <ul>
+                                <li>Улучшение качества кожи и цвета лица</li>
+                                <li>Свежий, ухоженный вид</li>
+                                <li>Чистая кожа без жирного блеска</li>
+                                <li>Уменьшение комедонов</li>
+                                <li>Сужение пор и уменьшение чёрных точек</li>
+                                <li>Отдых и расслабление во время процедуры</li>
+                            </ul>
+                        </div>
+                        <div class="service__cta">
+                            <a href="#contacts" class="btn btn--primary">Записаться на чистку</a>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 5 -->
+                <details class="service">
+                    <summary class="service__summary">
+                        <span class="service__num">05</span>
+                        <span class="service__head">
+                            <span class="service__title">Пилинги</span>
+                            <span class="service__meta">Офлайн · 1 час</span>
+                        </span>
+                        <span class="service__price">2 500 – 3 500 ₽</span>
+                        <span class="service__chev" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="service__body">
+                        <div class="service__col">
+                            <h4>О процедуре</h4>
+                            <ul>
+                                <li>Всесезонные поверхностные и сезонные (осень-зима) более глубокие</li>
+                                <li>Подготовка к пилингам — мягкое введение в курс</li>
+                                <li>Малоинвазивные составы</li>
+                                <li>Быстрая реабилитация без выпадения из социально-активной жизни</li>
+                                <li>Сужение пор, увлажнение, уменьшение морщин и пигментных пятен</li>
+                            </ul>
+                        </div>
+                        <div class="service__col">
+                            <h4>Как проходит</h4>
+                            <ol>
+                                <li>Анамнез, определяем задачи на сеанс/курс</li>
+                                <li>Выбираем стратегию и тактику курса</li>
+                                <li>Демакияж, умывание, поверхностное очищение</li>
+                                <li>Нанесение основного состава с приёмами усиления</li>
+                                <li>Смывка состава</li>
+                                <li>Маска</li>
+                                <li>Завершающий уход (сыворотка, крем)</li>
+                            </ol>
+                        </div>
+                        <div class="service__col">
+                            <h4>Результат</h4>
+                            <ul>
+                                <li>Устранение эстетических дефектов кожи</li>
+                                <li>Улучшение рельефа, лифтинг кожи (подтянутый овал лица)</li>
+                                <li>Уменьшение пигментации, анти-эйдж эффект</li>
+                                <li>Увлажнение и улучшение питания кожи</li>
+                                <li>Синтез коллагена — улучшение плотности кожи</li>
+                            </ul>
+                        </div>
+                        <div class="service__cta">
+                            <a href="#contacts" class="btn btn--primary">Записаться на пилинг</a>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 6 -->
+                <details class="service">
+                    <summary class="service__summary">
+                        <span class="service__num">06</span>
+                        <span class="service__head">
+                            <span class="service__title">Карбокситерапия</span>
+                            <span class="service__meta">Офлайн · 1 час</span>
+                        </span>
+                        <span class="service__price">
+                            <span class="service__price-row"><s>3 000 ₽</s> <strong>2 500 ₽</strong> <small>первый сеанс</small></span>
+                            <span class="service__price-row">3 000 ₽ <small>повторный</small></span>
+                            <span class="service__price-row"><s>12 000 ₽</s> <strong>10 000 ₽</strong> <small>курс из 4</small></span>
+                        </span>
+                        <span class="service__chev" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="service__body">
+                        <div class="service__col">
+                            <h4>О процедуре</h4>
+                            <ul>
+                                <li>Улучшение качества кожи и внешнего вида</li>
+                                <li>Свежий вид лица</li>
+                                <li>Улучшение микроциркуляции и кровообращения</li>
+                                <li>Стимуляция регенерации тканей</li>
+                                <li>Улучшение клеточного метаболизма</li>
+                                <li>Усиление выработки коллагена и эластина</li>
+                            </ul>
+                        </div>
+                        <div class="service__col">
+                            <h4>Как проходит</h4>
+                            <ol>
+                                <li>Анамнез и осмотр кожи</li>
+                                <li>Обсуждение решаемых задач</li>
+                                <li>Демакияж, умывание</li>
+                                <li>Нанесение специального состава и активатора</li>
+                                <li>Выдержка состава на лице определённое время</li>
+                                <li>Смывка, тонизация</li>
+                                <li>Маска и финишный уход (сыворотка, крем)</li>
+                            </ol>
+                        </div>
+                        <div class="service__col">
+                            <h4>Результат</h4>
+                            <ul>
+                                <li>Улучшение плотности и эластичности кожи</li>
+                                <li>Уменьшение мимических морщин</li>
+                                <li>Уменьшение пигментации</li>
+                                <li>Улучшение цвета лица и питания тканей</li>
+                                <li>Свежая, «напитанная изнутри» кожа</li>
+                            </ul>
+                        </div>
+                        <div class="service__cta">
+                            <a href="#contacts" class="btn btn--primary">Записаться на карбокситерапию</a>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 7 -->
+                <details class="service">
+                    <summary class="service__summary">
+                        <span class="service__num">07</span>
+                        <span class="service__head">
+                            <span class="service__title">Сеанс остеоэстетики</span>
+                            <span class="service__meta">Офлайн · 1,5 часа</span>
+                        </span>
+                        <span class="service__price">
+                            <span class="service__price-row"><s>2 500 ₽</s> <strong>2 000 ₽</strong> <small>первый сеанс</small></span>
+                            <span class="service__price-row">2 500 ₽ <small>повторный</small></span>
+                            <span class="service__price-row"><s>10 000 ₽</s> <strong>8 000 ₽</strong> <small>курс из 4</small></span>
+                        </span>
+                        <span class="service__chev" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="service__body">
+                        <div class="service__col">
+                            <h4>О процедуре</h4>
+                            <ul>
+                                <li>Определение первопричин морщин, отёков, визуального старения</li>
+                                <li>Лифтинг и подтяжка лица, чёткий овал</li>
+                                <li>Улучшение питания тканей, свежесть лица, открытый взгляд</li>
+                                <li>Прилив энергии, улучшение эмоционального состояния</li>
+                                <li>Устранение отёчности и уменьшение морщин</li>
+                                <li>Включение в работу неактивных мышц</li>
+                                <li>Часть техник проводится интраорально (в перчатках)</li>
+                            </ul>
+                        </div>
+                        <div class="service__col">
+                            <h4>Как проходит</h4>
+                            <ol>
+                                <li>Определение запроса, анамнез</li>
+                                <li>Диагностика тканей лица и тела (визуальная, пальпаторная, тесты)</li>
+                                <li>Демакияж и умывание</li>
+                                <li>Лимфодренаж и проработка всех диафрагм тела</li>
+                                <li>Работа с нижней третью лица (шея, нижняя челюсть)</li>
+                                <li>Работа со средней третью (верхняя челюсть, скулы, нос)</li>
+                                <li>Работа с верхней третью (глаза, лоб, выходы тройничного нерва)</li>
+                                <li>Работа с черепом и гармонизация всего организма</li>
+                                <li>Ре-тест: что изменилось</li>
+                                <li>Финишный уход (сыворотка, крем)</li>
+                            </ol>
+                        </div>
+                        <div class="service__col">
+                            <h4>Результат</h4>
+                            <ul>
+                                <li>Работа с первопричинами — кости, мышцы, фасции</li>
+                                <li>Стойкий визуальный эффект с накопительным действием</li>
+                                <li>Расслабление, как после СПА — клиенты отдыхают и восстанавливаются</li>
+                                <li>Ощущение наполненности, целостности лица и тела</li>
+                                <li>Мягкие, приятные техники без боли</li>
+                                <li>Результат держится дольше, чем от обычного массажа</li>
+                            </ul>
+                        </div>
+                        <div class="service__cta">
+                            <a href="#contacts" class="btn btn--primary">Записаться на остеоэстетику</a>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+
+            <div class="cta-band">
+                <div class="cta-band__text">
+                    <p>Не уверены, какая процедура подойдёт именно вам? Напишите — помогу выбрать.</p>
+                </div>
+                <a href="#contacts" class="btn btn--primary btn--lg">Связаться</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section class="section section--alt" id="contacts">
+        <div class="container">
+            <p class="eyebrow">04 — Контакты</p>
+            <h2 class="section__title">Записаться на сеанс</h2>
+
+            <div class="contacts">
+                <div class="contacts__media">
+                    <img src="images/liliya_final.jpg" alt="Лилия" class="contacts__photo" onerror="this.parentElement.classList.add('contacts__media--placeholder'); this.style.display='none'">
+                    <div class="contacts__placeholder"><span>Фото</span></div>
+                </div>
+                <div class="contacts__info">
+                    <p class="contacts__lead">Принимаю в кабинете в Тольятти. Чтобы записаться или задать вопрос — напишите в Telegram.</p>
+
+                    <ul class="contacts__list">
+                        <li>
+                            <span class="contacts__label">Telegram</span>
+                            <a href="https://t.me/lilia_kashirskaya" target="_blank" rel="noopener" class="contacts__value">@lilia_kashirskaya →</a>
+                        </li>
+                        <li>
+                            <span class="contacts__label">Адрес</span>
+                            <span class="contacts__value">Тольятти, кабинет в салоне<br><small>(уточните адрес при записи)</small></span>
+                        </li>
+                        <li>
+                            <span class="contacts__label">График</span>
+                            <span class="contacts__value">По записи · будни после 16:00 и выходные</span>
+                        </li>
+                    </ul>
+
+                    <a href="https://t.me/lilia_kashirskaya" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Написать в Telegram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="container footer__inner">
+        <div class="footer__col">
+            <span class="logo logo--footer">
+                <span class="logo__mark">Л</span>
+                <span class="logo__text">Лилия<small>эстетист · косметолог</small></span>
+            </span>
+        </div>
+        <div class="footer__col">
+            <p>Тольятти · по записи</p>
+            <p><a href="https://t.me/lilia_kashirskaya" target="_blank" rel="noopener">@lilia_kashirskaya</a></p>
+        </div>
+        <div class="footer__col footer__col--right">
+            <p class="footer__copy">© <span id="year"></span> Лилия. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
